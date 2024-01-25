@@ -1,0 +1,5 @@
+$Action = New-ScheduledTaskAction -Execute 'C:\path\to\your\program.exe' # Replace with the path to your executable
+$Trigger = New-ScheduledTaskTrigger -AtStartup
+$Principal = New-ScheduledTaskPrincipal -UserId "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
+
+Register-ScheduledTask -TaskName "MyStartupTask" -Action $Action -Trigger $Trigger -Principal $Principal
